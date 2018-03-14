@@ -9,4 +9,5 @@ console.log(blankLine);
 console.log(blankLine);
 console.log(blankLine);
 
-const guessLine = ;
+const guessLine = '1| | ';
+const bombLine = ' |b| '
