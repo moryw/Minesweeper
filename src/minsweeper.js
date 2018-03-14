@@ -2,9 +2,11 @@
 
 
 //this is a hard coded game board line
-const blankline = ' | | ';
+const blankLine = ' | | ';
 
 console.log(`This is what an empty board would look like:`);
-console.log(blankline);
-console.log(blankline);
-console.log(blankline);
+console.log(blankLine);
+console.log(blankLine);
+console.log(blankLine);
+
+const guessLine = ;
