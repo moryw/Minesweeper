@@ -70,6 +70,9 @@ const getNumberOfNeighborBombs = (bombBoard, rowIndex, columnIndex) => {
 //allow player to flip a title to see if there is bomb under it
 const flipTile = (playerBoard, bombBoard, rowIndex, columnIndex) => {
   if (playerBoard[rowIndex][columnIndex] !== '?') {
+    console.log('This tile has already been flipped!');
+    return ;
+  } else if (bombBoard[rowIndex][columnIndex] == 'B') {
     
   }
 }
