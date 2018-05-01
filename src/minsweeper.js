@@ -1,7 +1,7 @@
 //this is a minesweeper game
 
 //create the players board based on # of rows and columns
-const generatePlayerBoard = ((numberOfRows, numberOfColumns) => {
+const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
   let board = []; //create board to be used based on user input
   for (var r = 0; r < numberOfRows; r++) {
     let row = []; //creat rows based on number specified by user
@@ -11,10 +11,10 @@ const generatePlayerBoard = ((numberOfRows, numberOfColumns) => {
     board.push(row) //push rows with columns added to board
   }
   return board;
-});
+};
 
-//create the bomb board based on # of rows, columns, and bombs  
-const generateBombBoard = ((numberOfRows, numberOfColumns, numberOfBombs) => {
+//create the bomb board based on # of rows, columns, and bombs
+const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
   let board = []; //create board to be used based on user input
   for (var r = 0; r < numberOfRows; r++) {
     let row = []; //creat rows based on number specified by user
@@ -35,9 +35,20 @@ const generateBombBoard = ((numberOfRows, numberOfColumns, numberOfBombs) => {
   }
 
   return board;
-});
+};
 
-
+//find # of bombs around the given index on the given board
+const getNumberOfNeighborBombs = (bombBoard, rowIndex, columnIndex) => {
+  const neighborOffsets = [
+    [-1,-1],
+    [-1,0],
+    [-1,1],
+    [0,-1],
+    [0,1],
+    [1,-1],
+    [1,0],
+    [1,1]];
+};
 
 const printBoard = board => {
   console.log(board.map(row => row.join(' | ')).join('\n'));
