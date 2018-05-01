@@ -39,34 +39,51 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
 
 //find # of bombs around the given index on the given board
 const getNumberOfNeighborBombs = (bombBoard, rowIndex, columnIndex) => {
-  // const neighborOffsets = [
-  //   [-1,-1],
-  //   [-1,0],
-  //   [-1,1],
-  //   [0,-1],
-  //   [0,1],
-  //   [1,-1],
-  //   [1,0],
-  //   [1,1]
-  // ];
-  //
+  const neighborOffsets = [
+    [-1,-1],
+    [-1,0],
+    [-1,1],
+    [0,-1],
+    [0,1],
+    [1,-1],
+    [1,0],
+    [1,1]
+  ];
+  //new version from cc video
   // const numberOfRows = bombBoard.length;
   // const numberOfColumns = bombBoard[0].length;
-  // let numberOfBombs = 0;
+  // let numberOfSurroundingBombs = 0;
   //
   // neighborOffsets.forEach(offset => {
-  //   const neighborRowIndex = rowIndex + offset[0];
-  //   const neighborColumnIndex = columnIndex + offset[1];
+  //   const neighborRow = rowIndex + offset[0];
+  //   const neighborColumn = columnIndex + offset[1];
   //
-  //   if (neighborRowIndex >= 0 && neighborRowIndex < numberOfRows && neighborColumnIndex >= 0 && neighborColumnIndex < 0) {
-  //     if (bombBoard[neighborRowIndex][neighborColumnIndex] == 'B') {
-  //       numberOfBombs++
+  //   if (neighborRow >= 0 && neighborRow < numberOfRows && neighborColumn >= 0 && neighborColumn < numberOfColumns) {
+  //     if (bombBoard[neighborRow][neighborColumn] === 'B') {
+  //       numberOfSurroundingBombs++;
   //     }
   //   }
   // });
-  //
-  // return numberOfBombs;
-  return 'F';
+
+  //return numberOfSurroundingBombs;
+
+  // orignal code that only returned '0' - fixed error in code
+  const numberOfRows = bombBoard.length;
+  const numberOfColumns = bombBoard[0].length;
+  let numberOfBombs = 0;
+
+  neighborOffsets.forEach(offset => {
+    const neighborRowIndex = rowIndex + offset[0];
+    const neighborColumnIndex = columnIndex + offset[1];
+
+    if (neighborRowIndex >= 0 && neighborRowIndex < numberOfRows && neighborColumnIndex >= 0 && neighborColumnIndex < numberOfColumns) {
+      if (bombBoard[neighborRowIndex][neighborColumnIndex] == 'B') {
+        numberOfBombs++
+      }
+    }
+  });
+
+  return numberOfBombs;
 };
 
 //allow player to flip a title to see if there is bomb under it
@@ -94,7 +111,7 @@ console.log('Bomb Board:');
 printBoard(bombBoard);
 
 flipTile(playerBoard, bombBoard, 0, 0);
-flipTile(playerBoard, bombBoard, 2, 3);
+flipTile(playerBoard, bombBoard, 1, 0);
 console.log('Updated player board:');
 printBoard(playerBoard);
 
