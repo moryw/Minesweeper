@@ -58,14 +58,21 @@ const getNumberOfNeighborBombs = (bombBoard, rowIndex, columnIndex) => {
     const neighborRowIndex = rowIndex + offset[0];
     const neighborColumnIndex = columnIndex + offset[1];
 
-    if (neighborRowIndex >= 0 && neighborRowIndex <= numberOfRows && neighborColumnIndex >= 0 && neighborColumnIndex <= 0) {
+    if (neighborRowIndex >= 0 && neighborRowIndex < numberOfRows && neighborColumnIndex >= 0 && neighborColumnIndex < 0) {
       if (bombBoard[neighborRowIndex][neighborColumnIndex] == 'B') {
         numberOfBombs++
       }
     }
   });
-
+  return numberOfBombs;
 };
+
+//allow player to flip a title to see if there is bomb under it
+const flipTile = (playerBoard, bombBoard, rowIndex, columnIndex) => {
+  if (playerBoard[rowIndex][columnIndex] !== '?') {
+    
+  }
+}
 
 const printBoard = board => {
   console.log(board.map(row => row.join(' | ')).join('\n'));
