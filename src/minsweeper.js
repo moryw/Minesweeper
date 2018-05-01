@@ -13,6 +13,7 @@ const generatePlayerBoard = ((numberOfRows, numberOfColumns) => {
   return board;
 });
 
+//create the bomb board based on # of rows, columns, and bombs  
 const generateBombBoard = ((numberOfRows, numberOfColumns, numberOfBombs) => {
   let board = []; //create board to be used based on user input
   for (var r = 0; r < numberOfRows; r++) {
@@ -35,6 +36,8 @@ const generateBombBoard = ((numberOfRows, numberOfColumns, numberOfBombs) => {
 
   return board;
 });
+
+
 
 const printBoard = board => {
   console.log(board.map(row => row.join(' | ')).join('\n'));
