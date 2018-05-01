@@ -8,7 +8,7 @@ const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
     for (var c = 0; c < numberOfColumns; c++) {
       row.push('?'); //create and push columns to row based on number specified by user
     }
-    board.push(row) //push rows with columns added to board
+    board.push(row); //push rows with columns added to board
   }
   return board;
 };
@@ -21,7 +21,7 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
     for (var c = 0; c < numberOfColumns; c++) {
       row.push('?'); //create and push columns to row based on number specified by user
     }
-    board.push(row) //push rows with columns added to board
+    board.push(row); //push rows with columns added to board
   }
 
   let numberOfBombsPlaced = 0;
@@ -47,7 +47,24 @@ const getNumberOfNeighborBombs = (bombBoard, rowIndex, columnIndex) => {
     [0,1],
     [1,-1],
     [1,0],
-    [1,1]];
+    [1,1]
+  ];
+
+  const numberOfRows = bombBoard.length;
+  const numberOfColumns = bombBoard[0].length;
+  let numberOfBombs = 0;
+
+  neighborOffsets.forEach(offset => {
+    const neighborRowIndex = rowIndex + offset[0];
+    const neighborColumnIndex = columnIndex + offset[1];
+
+    if (neighborRowIndex >= 0 && neighborRowIndex <= numberOfRows && neighborColumnIndex >= 0 && neighborColumnIndex <= 0) {
+      if (bombBoard[neighborRowIndex][neighborColumnIndex] == 'B') {
+        numberOfBombs++
+      }
+    }
+  });
+
 };
 
 const printBoard = board => {
