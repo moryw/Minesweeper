@@ -49,7 +49,7 @@ const getNumberOfNeighborBombs = (bombBoard, rowIndex, columnIndex) => {
     [1,0],
     [1,1]
   ];
-  //new version from cc video
+  // //new version from cc video
   // const numberOfRows = bombBoard.length;
   // const numberOfColumns = bombBoard[0].length;
   // let numberOfSurroundingBombs = 0;
@@ -64,7 +64,6 @@ const getNumberOfNeighborBombs = (bombBoard, rowIndex, columnIndex) => {
   //     }
   //   }
   // });
-
   //return numberOfSurroundingBombs;
 
   // orignal code that only returned '0' - fixed error in code
