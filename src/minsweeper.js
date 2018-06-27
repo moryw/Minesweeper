@@ -1,5 +1,18 @@
 //this is a minesweeper game
 
+class Board {
+  constructor(numberOfRows, numberOfColumns, numberOfBombs) {
+
+  }
+}
+
+
+
+
+
+
+
+
 //create the players board based on # of rows and columns
 const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
   let board = []; //create board to be used based on user input
@@ -104,10 +117,10 @@ const printBoard = board => {
 let playerBoard = generatePlayerBoard(3,4);
 let bombBoard = generateBombBoard(3,4,5);
 
-console.log('Player board:');
-printBoard(playerBoard);
 console.log('Bomb Board:');
 printBoard(bombBoard);
+console.log('Player board:');
+printBoard(playerBoard);
 
 flipTile(playerBoard, bombBoard, 0, 0);
 flipTile(playerBoard, bombBoard, 1, 0);
