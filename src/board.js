@@ -32,6 +32,10 @@ export class Board {
     this._numberOfTiles--;
   }
 
+  hasSafeTiles() {
+    return numberOfTiles === numberOfBombs;
+  }
+
   //find # of bombs around the given index on the given board
   getNumberOfNeighborBombs(rowIndex, columnIndex) {
     const neighborOffsets = [
@@ -61,10 +65,6 @@ export class Board {
     });
 
     return numberOfBombs;
-  }
-
-  hasSafeTiles() {
-    return numberOfTiles !== numberOfBombs;
   }
 
   //create the players board based on # of rows and columns

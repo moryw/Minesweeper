@@ -25,7 +25,7 @@ class Game {
     if (this._board.playerBoard[rowIndex][columnIndex] === 'B') {
       console.log('You hit a bomb. GAME OVER!');
       this._board.print();
-    } else if (this._board.hasSafeTiles === false) {
+    } else if (this._board.hasSafeTiles === true) {
       console.log('WINNER! There are no more safe tiles.');
     } else {
       console.log('Current Board');
