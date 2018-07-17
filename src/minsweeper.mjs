@@ -1,4 +1,6 @@
 //this is a minesweeper game
+import Board from './board';
+
 
 class Game {
   constructor(numberOfRows, numberOfColumns, numberOfBombs) {
