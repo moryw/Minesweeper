@@ -1,5 +1,5 @@
 //create a board for minesweeper games
-export default Board;
+export {Board as default};
 
 class Board {
   constructor(numberOfRows, numberOfColumns, numberOfBombs) {
