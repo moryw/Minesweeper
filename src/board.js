@@ -1,7 +1,5 @@
 //board logic for minesweeper games
-export {Board as default};
-
-class Board {
+export class Board {
   constructor(numberOfRows, numberOfColumns, numberOfBombs) {
     this._numberOfBombs = numberOfBombs;
     this._numberOfTiles = numberOfColumns * numberOfRows;
