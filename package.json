@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/moryw/Minesweeper/issues"
   },
-  "homepage": "https://github.com/moryw/Minesweeper#readme"
+  "homepage": "https://github.com/moryw/Minesweeper#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
 }
