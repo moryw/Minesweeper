@@ -23,8 +23,6 @@ class Game {
 };
 
 
-
-
 const game1 = new Game(9,9,6);
 
 game1.playMove(1,0);

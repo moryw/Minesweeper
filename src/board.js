@@ -1,4 +1,6 @@
 //create a board for minesweeper games
+export default Board;
+
 class Board {
   constructor(numberOfRows, numberOfColumns, numberOfBombs) {
     this._numberOfBombs = numberOfBombs;
