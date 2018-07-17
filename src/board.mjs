@@ -1,7 +1,6 @@
 //board logic for minesweeper games
-export {Board as default};
 
-class Board {
+export class Board {
   constructor(numberOfRows, numberOfColumns, numberOfBombs) {
     this._numberOfBombs = numberOfBombs;
     this._numberOfTiles = numberOfColumns * numberOfRows;
@@ -21,6 +20,10 @@ class Board {
     return this._numberOfTiles;
   }
 
+  get numberOfBombs() {
+    return this._numberOfBombs;
+  }
+
   //allow player to flip a title to see if there is bomb under it
   flipTile(rowIndex, columnIndex) {
     if (this.playerBoard[rowIndex][columnIndex] !== '?') {
@@ -33,6 +36,10 @@ class Board {
     }
     this._numberOfTiles--;
   }
+
+  hasSafeTiles() {
+    return this.numberOfTiles === this.numberOfBombs;
+  };
 
   //find # of bombs around the given index on the given board
   getNumberOfNeighborBombs(rowIndex, columnIndex) {
@@ -65,9 +72,6 @@ class Board {
     return numberOfBombs;
   }
 
-  hasSafeTiles() {
-    return numberOfTiles !== numberOfBombs;
-  }
 
   //create the players board based on # of rows and columns
   static generatePlayerBoard(numberOfRows, numberOfColumns) {
