@@ -1,4 +1,4 @@
-//create a board for minesweeper games
+//board logic for minesweeper games
 export {Board as default};
 
 class Board {
