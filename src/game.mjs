@@ -10,6 +10,12 @@
 // game.playMove(1, 2);
 // When done run `.exit`
 
+// Matts new way to play
+// Run `.load game.js` to load the contents of this file.
+// To start a new game type: start(numberOfRows,numberOfColumns,numberOfBombs)
+// To flip a tile type: flip(rowIndex,columnIndex)
+// When done run `.exit`
+
 import {Board} from './board.mjs';
 
 class Game {
@@ -55,8 +61,8 @@ let flip = (rowIndex, columnIndex) => {
   }
 };
 
-game(3,3,4)
-flip(0,0)
+start(3,3,4)
+//flip(0,0)
 
 //console.log(game(3,3,4));
 // console.log(game);

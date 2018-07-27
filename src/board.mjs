@@ -1,5 +1,4 @@
 //board logic for minesweeper games
-
 export class Board {
   constructor(numberOfRows, numberOfColumns, numberOfBombs) {
     this._numberOfBombs = numberOfBombs;
